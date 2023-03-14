@@ -26,5 +26,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
   }
 
   @override
-  Future<List<MovieModel>> GetPopularMovies() {}
+  Future<List<MovieModel>> GetPopularMovies() {
+    throw UnimplementedError();
+  }
 }
