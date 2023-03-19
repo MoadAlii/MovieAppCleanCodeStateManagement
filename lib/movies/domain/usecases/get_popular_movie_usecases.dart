@@ -1,5 +1,8 @@
 import 'package:clean/movies/domain/entities/movie.dart';
 import 'package:clean/movies/domain/repository/base_movie_repositry.dart';
+import 'package:dartz/dartz.dart';
+
+import '../../../core/error/failuer.dart';
 
 class GetPopularMoviesUseCases {
   final BaseMovieRepositry? baseMovieRepositry;
@@ -7,7 +10,7 @@ class GetPopularMoviesUseCases {
     this.baseMovieRepositry,
   });
 
-  Future<List<Movie>> execute() async {
+  Future<Either<Failuer, List<Movie?>>> execute() async {
     return await baseMovieRepositry!.getPopularMovies();
   }
 }
