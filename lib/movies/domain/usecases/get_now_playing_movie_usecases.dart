@@ -8,6 +8,6 @@ class GetNowPlayingMoviesUseCases {
   });
 
   Future<List<Movie>> execute() async {
-    return await baseMovieRepositry!.getNowplaying();
+    return await baseMovieRepositry!.getNowplayinMovies();
   }
 }

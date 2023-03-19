@@ -1,9 +1,9 @@
 import 'package:clean/movies/domain/entities/movie.dart';
 import 'package:clean/movies/domain/repository/base_movie_repositry.dart';
 
-class TopRatedMoviesUseCases {
+class GetTopRatedMoviesUseCases {
   final BaseMovieRepositry? baseMovieRepositry;
-  TopRatedMoviesUseCases({
+  GetTopRatedMoviesUseCases({
     this.baseMovieRepositry,
   });
 
