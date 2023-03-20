@@ -20,8 +20,8 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     final response = await Dio().get(AppConstance.nowPlayingMoviesPath);
 
     if (response.statusCode == 200) {
-      return List<MovieModel>.from(
-          (response.data["result"] as List).map((e) => MovieModel.fromJson(e)));
+      return List<MovieModel>.from((response.data["results"] as List)
+          .map((e) => MovieModel.fromJson(e)));
     } else {
       throw ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(response.data));
