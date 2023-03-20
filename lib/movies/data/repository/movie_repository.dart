@@ -9,7 +9,8 @@ import 'package:dartz/dartz.dart';
 
 class MovieRepository extends BaseMovieRepositry {
   final BaseMovieRemoteDataSource? baseMovieRemoteDataSource;
-  MovieRepository({
+  MovieRepository(
+    BaseMovieRemoteDataSource baseMovieRemoteDataSource, {
     this.baseMovieRemoteDataSource,
   });
 
