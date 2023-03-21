@@ -7,7 +7,10 @@ abstract class MoviesEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class GetNowPlayingMoviesEvent extends MoviesEvent {}
+class GetNowPlayingMoviesEvent extends MoviesEvent {
+  GetNowPlayingMoviesEvent(
+      Future<Null> Function(dynamic event, dynamic emit) param0);
+}
 
 class GetPopularMoviesEvent extends MoviesEvent {}
 
