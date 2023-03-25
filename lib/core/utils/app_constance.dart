@@ -1,5 +1,6 @@
 class AppConstance {
   static const baseUrl = 'https://api.themoviedb.org/3';
+  static const String baseImageUrl = 'https://image.tmdb.org/t/p/w500';
   static const apiKey = '110b43e411eb0543b6fda80ef4323761';
 
   static const String nowPlayingMoviesPath =
@@ -20,4 +21,6 @@ class AppConstance {
 
   static const String topRatedTvShowsPath =
       "$baseUrl/3/tv/top_rated?api_key=$apiKey";
+
+  static String imageUrl(String path) => '$baseImageUrl$path';
 }

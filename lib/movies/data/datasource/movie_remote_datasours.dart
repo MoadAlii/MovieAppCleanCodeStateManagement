@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:clean/core/error/exception.dart';
 import 'package:clean/core/utils/app_constance.dart';
 import 'package:clean/movies/data/models/movie_model.dart';
@@ -21,7 +23,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
 
     if (response.statusCode == 200) {
       return List<MovieModel>.from((response.data["results"] as List)
-          .map((e) => MovieModel.fromJson(e)));
+          .map((e) => MovieModel.fromjson(e)));
     } else {
       throw ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(response.data));
@@ -33,7 +35,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     final response = await Dio().get(AppConstance.popularMoviesPath);
     if (response.statusCode == 200) {
       return List<MovieModel>.from(
-          (response.data["result"] as List).map((e) => MovieModel.fromJson(e)));
+          (response.data["result"] as List).map((e) => MovieModel.fromjson(e)));
     } else {
       throw ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(response.data));
@@ -45,7 +47,7 @@ class MovieRemoteDataSource extends BaseMovieRemoteDataSource {
     final response = await Dio().get(AppConstance.topRatedMoviesPath);
     if (response.statusCode == 200) {
       return List<MovieModel>.from(
-          (response.data["result"] as List).map((e) => MovieModel.fromJson(e)));
+          (response.data["result"] as List).map((e) => MovieModel.fromjson(e)));
     } else {
       throw ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(response.data));

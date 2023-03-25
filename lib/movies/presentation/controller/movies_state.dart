@@ -7,7 +7,7 @@ class MoviesState extends Equatable {
   final List<Movie> nowPlayingMovies;
   final RequestState nowPlayingState;
   final String message;
-  MoviesState({
+  const MoviesState({
     this.nowPlayingMovies = const [],
     this.nowPlayingState = RequestState.loading,
     this.message = "",
