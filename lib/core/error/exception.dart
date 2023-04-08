@@ -7,10 +7,10 @@ class ServerException implements Exception {
   });
 }
 
-// class LocalDatabaseException implements Exception {
-//   final String  massage;
-//   const LocalDatabaseException({
-//     required this.massage,
-//   });
+class LocalDatabaseException implements Exception {
+  final String  massage;
+  const LocalDatabaseException({
+    required this.massage,
+  });
 
-// }
+}
